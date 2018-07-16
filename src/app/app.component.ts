@@ -7,18 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PlatziSquare';
-  a = 2;
-  b = 3;
-  listo = false;
-  nombre = 'Mauro';
+  lugares: any = [
+    { active: true, nombre: 'Floreria la Gardenia' },
+    { active: true, nombre: 'Donas la pasadita' },
+    { active: true, nombre: 'Veterinaria huellitas felices' },
+    { active: false, nombre: 'Sushi shuiroll' },
+    { active: true, nombre: 'Hotel la gracia' },
+    { active: true, nombre: 'Zapateria el clavo' }
+  ];
 
-  constructor() {
-    setTimeout(() => {
-      this.listo = true;
-    }, 3000);
-  }
-
-  hacerAlgo() {
-    alert('Haciendo algo');
-  }
+  constructor() {}
 }

@@ -1,13 +1,7 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <h2>
-    {{a + b}}
-  </h2>
-  <hr>
-  <button [disabled]="!listo" (click)="hacerAlgo()">Click me!</button>
-  <hr>
-  <input type="text" placeholder="Tu nombre" [(ngModel)]="nombre" />
-  <hr> Mi nombre es {{nombre}}
-</div>
+<ul>
+  <ng-container *ngFor="let lugar of lugares">
+    <li *ngIf="lugar.active">
+      {{lugar.nombre}}
+    </li>
+  </ng-container>
+</ul>
