@@ -3,9 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBQVf0ORpvGRSLetPtUGzJfgTXz8p4SVK8'
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
