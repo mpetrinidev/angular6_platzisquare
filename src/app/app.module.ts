@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { ResaltarDirective } from './directives/resaltar/resaltar.directive';
+import { ContarClicksDirective } from './directives/clicks/contar-clicks.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ResaltarDirective, ContarClicksDirective],
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
