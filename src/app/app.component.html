@@ -7,36 +7,16 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Inicio
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="'/lugares'">Inicio
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="'/detalle/1'">Detalle</a>
       </li>
     </ul>
   </div>
 </nav>
 
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Lugares cercanos</h2>
-      <ul class="list-group">
-        <ng-container *ngFor="let lugar of lugares">
-          <li class="list-group-item" *ngIf="lugar.active">
-            {{lugar.nombre}}
-          </li>
-        </ng-container>
-      </ul>
-    </div>
-    <div class="col-md-4">
-      <h2>Destacados</h2>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
