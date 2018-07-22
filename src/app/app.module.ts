@@ -10,6 +10,7 @@ import { Routing } from './app.routing';
 import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { LugaresService } from './services/lugares.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { ContactoComponent } from './contacto/contacto.component';
       apiKey: 'AIzaSyBQVf0ORpvGRSLetPtUGzJfgTXz8p4SVK8'
     })
   ],
-  providers: [],
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
