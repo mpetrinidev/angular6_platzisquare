@@ -14,7 +14,9 @@ export class DetalleComponent implements OnInit {
       cercania: 1,
       distancia: 1,
       active: true,
-      nombre: 'Floreria la Gardenia'
+      nombre: 'Floreria la Gardenia',
+      descripcion:
+        'Descripción de este negocio. Mas adelante tendremos mas informacion'
     },
     {
       id: 2,
@@ -22,7 +24,9 @@ export class DetalleComponent implements OnInit {
       cercania: 1,
       distancia: 1.8,
       active: true,
-      nombre: 'Donas la pasadita'
+      nombre: 'Donas la pasadita',
+      descripcion:
+        'Descripción de este negocio. Mas adelante tendremos mas informacion'
     },
     {
       id: 3,
@@ -30,7 +34,9 @@ export class DetalleComponent implements OnInit {
       cercania: 2,
       distancia: 5,
       active: true,
-      nombre: 'Veterinaria huellitas felices'
+      nombre: 'Veterinaria huellitas felices',
+      descripcion:
+        'Descripción de este negocio. Mas adelante tendremos mas informacion'
     },
     {
       id: 4,
@@ -38,7 +44,9 @@ export class DetalleComponent implements OnInit {
       cercania: 3,
       distancia: 10,
       active: false,
-      nombre: 'Sushi shuiroll'
+      nombre: 'Sushi shuiroll',
+      descripcion:
+        'Descripción de este negocio. Mas adelante tendremos mas informacion'
     },
     {
       id: 5,
@@ -46,7 +54,9 @@ export class DetalleComponent implements OnInit {
       cercania: 3,
       distancia: 35,
       active: true,
-      nombre: 'Hotel la gracia'
+      nombre: 'Hotel la gracia',
+      descripcion:
+        'Descripción de este negocio. Mas adelante tendremos mas informacion'
     },
     {
       id: 6,
@@ -54,22 +64,22 @@ export class DetalleComponent implements OnInit {
       cercania: 3,
       distancia: 120,
       active: true,
-      nombre: 'Zapateria el clavo'
+      nombre: 'Zapateria el clavo',
+      descripcion:
+        'Descripción de este negocio. Mas adelante tendremos mas informacion'
     }
   ];
-
-  id = null;
+  id = 0;
+  lugar: any = {};
 
   constructor(private route: ActivatedRoute) {
     this.id = this.route.snapshot.params['id'];
-    console.log(this.buscarLugar());
+    this.lugar = this.buscarLugar();
   }
 
   ngOnInit() {}
 
   buscarLugar() {
-    return this.lugares.find(l => {
-      return l.id === this.id;
-    });
+    return this.lugares.find(l => l.id == this.id);
   }
 }
