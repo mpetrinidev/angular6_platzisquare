@@ -16,6 +16,7 @@ import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
 import { CrearComponent } from './crear/crear.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDPvu4le2PsD5Upg92KvT6weuTsp1NhO',
@@ -39,6 +40,7 @@ export const firebaseConfig = {
     Routing,
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
