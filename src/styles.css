@@ -8,3 +8,16 @@ agm-map {
   background-color: aliceblue;
   color: blue;
 }
+
+a.btn.btn-primary,
+a.btn.btn-default {
+  margin-bottom: 1em;
+}
+
+.e-form {
+  padding-top: 1em;
+}
+
+.card.card-body.bg-light a {
+  display: contents;
+}

@@ -3,15 +3,22 @@
 </div>
 
 <div class="container">
-  <label for="Nombre">Nombre</label>
-  <input type="text" class="form-control">
-  <br>
-  <label for="Correo">Correo</label>
-  <input type="email" class="form-control">
-  <br>
-  <label for="Mensaje">Mensaje</label>
-  <textarea class="form-control"></textarea>
+  <div class="e-form">
+    <div class="form-group">
+      <label for="Nombre">Nombre</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="Correo">Correo</label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="Mensaje">Mensaje</label>
+      <textarea class="form-control"></textarea>
+    </div>
+  </div>
+
   <hr>
-  <a class="btn btn-primary" role="button">Enviar</a>
+  <a class="btn btn-primary" href="#">Enviar</a>
   <a class="btn btn-default" routerLink="/lugares">Cancelar</a>
 </div>

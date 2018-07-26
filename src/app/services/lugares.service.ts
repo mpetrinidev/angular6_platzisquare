@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LugaresService {
+  API_ENDPOINT = 'https://platzisquare-210502.firebaseio.com';
   lugares: any = [];
 
   constructor(
@@ -14,7 +16,8 @@ export class LugaresService {
   ) {}
 
   public getLugares() {
-    return this.firebaseDatabase.list('lugares/');
+    // return this.firebaseDatabase.list('lugares/');
+    return this.http.get(this.API_ENDPOINT + '/lugares.json');
   }
 
   public getLugar(id) {
@@ -22,7 +25,12 @@ export class LugaresService {
   }
 
   public guardarLugar(lugar) {
-    this.firebaseDatabase.database.ref('lugares/' + lugar.id).set(lugar);
+    // this.firebaseDatabase.database.ref('lugares/' + lugar.id).set(lugar);
+    return this.http
+      .post(this.API_ENDPOINT + '/lugares.json', lugar, {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      })
+      .subscribe();
   }
 
   public obtenerGeoData(direccion) {

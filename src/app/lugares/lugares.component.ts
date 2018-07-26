@@ -14,11 +14,13 @@ export class LugaresComponent implements OnInit {
   constructor(private lugaresService: LugaresService) {}
 
   ngOnInit() {
-    this.lugaresService
-      .getLugares()
-      .valueChanges()
-      .subscribe(res => {
-        this.lugares = res;
-      });
+    this.lugaresService.getLugares().subscribe(
+      res => {
+        this.lugares = Object.values(res);
+      },
+      error => {
+        alert(error.statusText);
+      }
+    );
   }
 }
