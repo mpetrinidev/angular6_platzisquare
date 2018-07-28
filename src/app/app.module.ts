@@ -17,6 +17,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
 import { CrearComponent } from './crear/crear.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDPvu4le2PsD5Upg92KvT6weuTsp1NhO',
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifystrPipe
   ],
   imports: [
     Routing,

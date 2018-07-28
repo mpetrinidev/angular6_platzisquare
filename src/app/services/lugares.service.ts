@@ -16,8 +16,8 @@ export class LugaresService {
   ) {}
 
   public getLugares() {
-    // return this.firebaseDatabase.list('lugares/');
-    return this.http.get(this.API_ENDPOINT + '/lugares.json');
+    return this.firebaseDatabase.list('lugares/');
+    // return this.http.get(this.API_ENDPOINT + '/lugares.json');
   }
 
   public getLugar(id) {
@@ -25,12 +25,12 @@ export class LugaresService {
   }
 
   public guardarLugar(lugar) {
-    // this.firebaseDatabase.database.ref('lugares/' + lugar.id).set(lugar);
-    return this.http
-      .post(this.API_ENDPOINT + '/lugares.json', lugar, {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-      })
-      .subscribe();
+    this.firebaseDatabase.database.ref('lugares/' + lugar.id).set(lugar);
+    // return this.http
+    //   .post(this.API_ENDPOINT + '/lugares.json', lugar, {
+    //     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    //   })
+    //   .subscribe();
   }
 
   public obtenerGeoData(direccion) {

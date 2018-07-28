@@ -38,7 +38,7 @@ export class CrearComponent implements OnInit {
       this.lugar.lat = location.lat;
       this.lugar.lng = location.lng;
 
-      if (this.id !== 'new') {
+      if (this.id === 'new') {
         this.lugar.id = Date.now();
       }
 
