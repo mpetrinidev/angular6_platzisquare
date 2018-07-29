@@ -21,3 +21,18 @@ a.btn.btn-default {
 .card.card-body.bg-light a {
   display: contents;
 }
+
+#cuadrado {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+.padding {
+  padding: 10px;
+  margin-bottom: 10px;
+}
