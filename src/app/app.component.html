@@ -15,6 +15,15 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="'/contacto'">Contacto</a>
       </li>
+      <li *ngIf="!loggedIn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="'/login'">Login</a>
+      </li>
+      <li *ngIf="!loggedIn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="'/registro'">Registro</a>
+      </li>
+      <li *ngIf="loggedIn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="logout()">Salir</a>
+      </li>
     </ul>
   </div>
 </nav>

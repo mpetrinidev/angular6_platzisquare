@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
-import { AutorizacionService } from './services/autorizacion.service';
+import { Injectable } from '@angular/core';
+import { CanActivate } from '@angular/router';
+import { AutorizacionService } from './autorizacion.service';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title = 'PlatziSquare';
+export class MyGuardService implements CanActivate {
   loggedIn = false;
 
   constructor(private autorizacion: AutorizacionService) {
@@ -25,7 +23,7 @@ export class AppComponent {
     );
   }
 
-  logout() {
-    this.autorizacion.logout();
+  canActivate() {
+    return this.loggedIn;
   }
 }

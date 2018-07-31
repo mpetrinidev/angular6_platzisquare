@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="e-form">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="model.email">
+        </div>
+        <div class="form-group">
+          <label for="Contraseña">Cotraseña</label>
+          <input type="password" class="form-control" [(ngModel)]="model.password">
+        </div>
+        <hr>
+        <a (click)="login()" class="btn btn-primary btn-block">Login</a>
+        <a (click)="facebookLogin()" class="btn btn-warning btn-block">Login con Facebook</a>
+        <a href="#" class="btn btn-default btn-block">Cancelar</a>
+      </div>
+    </div>
+  </div>
+
+</div>

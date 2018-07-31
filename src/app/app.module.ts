@@ -19,9 +19,13 @@ import { LugaresService } from './services/lugares.service';
 import { CrearComponent } from './crear/crear.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { LinkifystrPipe } from './pipes/linkifystr.pipe';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import { AutorizacionService } from './services/autorizacion.service';
+import { MyGuardService } from './services/my-guard.service';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyDPvu4le2PsD5Upg92KvT6weuTsp1NhO',
+  apiKey: 'AIzaSyDPvu4le2PsD5Upg92KvT6weuTsp1NhO-U',
   authDomain: 'platzisquare-210502.firebaseapp.com',
   databaseURL: 'https://platzisquare-210502.firebaseio.com',
   storageBucket: 'platzisquare-210502.appspot.com',
@@ -37,7 +41,9 @@ export const firebaseConfig = {
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
-    LinkifystrPipe
+    LinkifystrPipe,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     Routing,
@@ -52,7 +58,7 @@ export const firebaseConfig = {
       apiKey: 'AIzaSyBQVf0ORpvGRSLetPtUGzJfgTXz8p4SVK8'
     })
   ],
-  providers: [LugaresService],
+  providers: [LugaresService, AutorizacionService, MyGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
