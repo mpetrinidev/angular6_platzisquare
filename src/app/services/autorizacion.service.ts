@@ -48,4 +48,8 @@ export class AutorizacionService {
     this.firebase.auth.signOut();
     this.router.navigate(['login']);
   }
+
+  getUser() {
+    return this.firebase.auth;
+  }
 }

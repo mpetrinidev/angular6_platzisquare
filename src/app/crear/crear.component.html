@@ -26,26 +26,37 @@
       <input type="text" class="form-control" [(ngModel)]="lugar.plan">
     </div>
 
-
     <h3>Datos de direccion</h3>
     <div class="form-group">
-      <label for="PlCalle y Numeroan">Calle y Numero</label>
-      <input type="text" class="form-control" [(ngModel)]="lugar.calle">
+      <div class="card card-body bg-light">
+        <label>Buscar dirección en Google Maps</label>
+        <input type="text" class="form-control" [formControl]="searchField">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let result of results | async" (click)="seleccionarDireccion(result)">
+            {{result.formatted_address}}
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="Ciudad">Ciudad</label>
-      <input type="text" class="form-control" [(ngModel)]="lugar.ciudad">
+    <div class=" form-group ">
+      <label for="PlCalle y Numeroan ">Calle y Numero</label>
+      <input type="text " class="form-control " [(ngModel)]="lugar.calle ">
     </div>
 
-    <div class="form-group">
-      <label for="Pais">Pais</label>
-      <input type="text" class="form-control" [(ngModel)]="lugar.pais">
+    <div class="form-group ">
+      <label for="Ciudad ">Ciudad</label>
+      <input type="text " class="form-control " [(ngModel)]="lugar.ciudad ">
+    </div>
+
+    <div class="form-group ">
+      <label for="Pais ">Pais</label>
+      <input type="text " class="form-control " [(ngModel)]="lugar.pais ">
     </div>
 
     <hr>
-    <a class="btn btn-primary" href="#" (click)="!!guardarLugar()">Enviar</a>
-    <a class="btn btn-default" routerLink="/lugares">Cancelar</a>
+    <a class="btn btn-primary " href="# " (click)="!!guardarLugar() ">Enviar</a>
+    <a class="btn btn-default " routerLink="/lugares ">Cancelar</a>
   </div>
 
 </div>

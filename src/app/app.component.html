@@ -25,6 +25,9 @@
         <a class="nav-link" (click)="logout()">Salir</a>
       </li>
     </ul>
+    <span *ngIf="loggedUser" class="navbar-text">
+      {{loggedUser}}
+    </span>
   </div>
 </nav>
 
